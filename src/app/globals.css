@@ -210,10 +210,4 @@
   flex-direction: column;
 }
 
-/* Hide Tldraw license & watermarks */
-.tl-watermark_logo,
-[data-testid="help-menu.watermark"],
-[data-testid="main.watermark"],
-[class*="watermark"] {
-  display: none !important;
-}
+
