@@ -7,7 +7,12 @@ import { createClient } from "@/lib/supabase/client";
 import { generateLiveKitToken, checkIsHost } from "./actions";
 import { LiveAudioRoom } from "@/components/livekit/audio-room";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { LiveBoard } from "@/components/board/live-board";
+import dynamic from "next/dynamic";
+
+const LiveBoard = dynamic(
+  () => import("@/components/board/live-board").then((mod) => mod.LiveBoard),
+  { ssr: false }
+);
 import { PresentationView } from "@/components/presentation/presentation-view";
 import { CommentsSidebar } from "@/components/comments/comments-sidebar";
 import { useSessionState } from "@/hooks/use-session-state";
