@@ -195,7 +195,7 @@ export default function SessionPage() {
   // ── Loading / gate screens ─────────────────────────────────────────────────
   if (loading) {
     return (
-      <div className="h-screen w-screen flex items-center justify-center">
+      <div className="h-[100dvh] w-screen flex items-center justify-center">
         <Loader2 className="h-8 w-8 animate-spin text-primary" />
       </div>
     );
@@ -203,7 +203,7 @@ export default function SessionPage() {
 
   if (needsNamePrompt) {
     return (
-      <div className="h-screen w-screen flex flex-col items-center justify-center bg-background p-4">
+      <div className="h-[100dvh] w-screen flex flex-col items-center justify-center bg-background p-4">
         <div className="max-w-md w-full border rounded-xl p-8 bg-card shadow-lg text-center space-y-6">
           <div className="flex justify-center mb-2">
             <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
@@ -274,7 +274,7 @@ export default function SessionPage() {
 
   if (sessionState.status === "ended") {
     return (
-      <div className="h-screen w-screen flex flex-col items-center justify-center bg-background p-4">
+      <div className="h-[100dvh] w-screen flex flex-col items-center justify-center bg-background p-4">
         <div className="max-w-md w-full border rounded-xl p-8 bg-card shadow-lg text-center space-y-6">
           <div className="flex justify-center mb-2">
             <div className="h-12 w-12 rounded-xl bg-muted flex items-center justify-center text-muted-foreground">
@@ -300,7 +300,7 @@ export default function SessionPage() {
   const activeMode = sessionState.activeMode;
 
   return (
-    <div className="h-screen w-full bg-background text-foreground flex flex-col overflow-hidden">
+    <div className="h-[100dvh] w-full bg-background text-foreground flex flex-col overflow-hidden">
       {/* ── Main header ──────────────────────────────────────────────────── */}
       <header className="border-b bg-card shrink-0">
         {/* Row 1: always visible */}

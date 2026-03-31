@@ -86,11 +86,13 @@ export function LiveBoard({ roomId, isHost }: LiveBoardProps) {
 
   return (
     <div
-      className={`w-full h-full relative tldraw-container ${
+      className={`absolute inset-0 w-full h-full min-h-[500px] flex flex-col overflow-hidden tldraw-container ${
         !isHost ? "pointer-events-none" : ""
       }`}
+      style={{ touchAction: "none" }}
     >
       <Tldraw
+        licenseKey={process.env.NEXT_PUBLIC_TLDRAW_LICENSE}
         persistenceKey={roomId}
         hideUi={!isHost}
         onMount={handleMount}
